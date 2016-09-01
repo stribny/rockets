@@ -29,18 +29,14 @@ def submit_email():
     flash('Thank you for signing up!')
     return redirect(url_for('index'))
 
-def connect_db():
-    """Opens a new database connection."""
-    rv = sqlite3.connect(app.config['DATABASE'])
-    rv.row_factory = sqlite3.Row
-    return rv
-
 def get_db():
     """Opens a new database connection if there is none yet for the
     current application context.
     """
     if not hasattr(g, 'sqlite_db'):
-        g.sqlite_db = connect_db()
+        conn = sqlite3.connect(app.config['DATABASE'])
+        conn.row_factory = sqlite3.Row
+        g.sqlite_db = conn
     return g.sqlite_db
 
 def init_db():
@@ -54,7 +50,7 @@ def init_db():
 def initdb_command():
     """Command to initialize the database."""
     init_db()
-    print('Initialized the database.')
+    print("Database has been initialized.")
 
 @app.teardown_appcontext
 def close_db(error):
