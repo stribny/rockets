@@ -5,6 +5,8 @@
 ```
 pip install flask
 pip install validate_email
+
+export FLASK_APP=app.py
 flask initdb
 ```
 
