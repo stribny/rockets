@@ -2,9 +2,10 @@
 
 ## Installation
 
+**Rockets** is written for Python 3
+
 ```
-pip install flask
-pip install validate_email
+pip install -r requirements.txt
 
 export FLASK_APP=app.py
 flask initdb
