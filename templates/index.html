@@ -1,8 +1,16 @@
 <!doctype html>
-<title>Sign up!</title>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-<div>
-  <h1>Sign up to receive news about the upcoming product!</h1>
+<html>
+<head>
+  <title>Sign up!</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=OpenSans">
+</head>
+<body>
+<div id="main">
+  <h1>Rockets</h1>
+  <h2>Sign up to receive news about the upcoming product!</h2>
+
+  <div id="signup">
   {% for message in get_flashed_messages() %}
     <div class="flash">{{ message }}</div>
   {% endfor %}
@@ -16,4 +24,6 @@
       <dd><input type="submit" value="Let me know when something happens">
     </dl>
   </form>
+  </div>
 </div>
+</body>
