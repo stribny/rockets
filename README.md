@@ -50,3 +50,9 @@ python tests.py
 ## Customize
 
 Just edit the template in `./templates/index.html`.
+
+## License
+
+Author: [Petr Stříbný](http://stribny.name)
+
+License: The MIT License (MIT)
