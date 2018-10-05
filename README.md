@@ -5,15 +5,19 @@
 ![Rockets in action](docs/screenshot.png)
 
 Rockets is built using:
-* [Flask](http://flask.pocoo.org/)
-* [SQLite](https://sqlite.org/)
-* and [Python 3](https://www.python.org/)
+
+- [Flask](http://flask.pocoo.org/)
+- [SQLite](https://sqlite.org/)
+- and [Python 3](https://www.python.org/)
 
 ## Installation
 
 ```
 # inside the folder
-pip install -r requirements.txt
+pipenv install
+
+# enter pipenv virtual environment
+pipenv shell
 
 export FLASK_APP=app.py
 mkdir instance
@@ -23,7 +27,9 @@ flask initdb
 ## Run for development
 
 ```
-# inside the folder
+# enter pipenv virtual environment
+pipenv shell
+
 export FLASK_APP=app.py
 export FLASK_DEBUG=1
 flask run
@@ -32,7 +38,6 @@ flask run
 ## Run for production
 
 Run using WSGI server such as [gunicorn](http://gunicorn.org):
-
 
 ```
 # inside the folder
